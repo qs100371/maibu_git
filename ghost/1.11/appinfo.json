@@ -1,0 +1,104 @@
+{
+  "uuid": "af92edc8361280055b614bf06fba8738",
+  "name": "动态符鬼",
+  "icon": "",
+  "version": "1.1.1",
+  "watchface": "true",
+  "resources": [
+        {
+        "type": "bmp",
+        "name": "BG",
+        "file": "bg.bmp"
+      },
+		{
+        "type": "bmp",
+        "name": "PIC_01",
+        "file": "normal_01.bmp"
+      },
+	   {
+        "type": "bmp",
+        "name": "PIC_02",
+        "file": "normal_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_03",
+        "file": "nothing_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_04",
+        "file": "nothing_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_05",
+        "file": "happy_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_06",
+        "file": "happy_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_07",
+        "file": "cry_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_08",
+        "file": "cry_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_09",
+        "file": "angry_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_10",
+        "file": "angry_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_11",
+        "file": "speak_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_12",
+        "file": "speak_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_13",
+        "file": "walk_left_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_14",
+        "file": "walk_left_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_15",
+        "file": "walk_right_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_16",
+        "file": "walk_right_02.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_17",
+        "file": "sleep_01.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "PIC_18",
+        "file": "sleep_02.bmp"
+      }
+      ]
+      }
