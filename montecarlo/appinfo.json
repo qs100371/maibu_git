@@ -1,0 +1,14 @@
+{
+  "uuid": "d08ce6a0ed9c240458978d72474f88df",
+  "name": "掷sai子",
+  "icon": "RES_BITMAP_ICON",
+  "version": "1.0.0",
+  "watchface": "false",
+  "resources": [
+          {
+        "type": "bmp",
+        "name": "RES_BITMAP_ICON",
+        "file": "icon.bmp"
+      }
+      ]
+      }
