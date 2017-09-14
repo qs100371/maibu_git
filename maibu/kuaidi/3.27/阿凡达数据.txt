@@ -1,0 +1,14 @@
+6bd714af49fc4ec9bff4907ecde302b8
+
+http://api.avatardata.cn/ExpressNumber/Lookup?key=6bd714af49fc4ec9bff4907ecde302b8&company=huitong&id=50442951903914&format=true
+
+{"result":[{"time":"2017-03-24 18:44:20","action":"合肥市|收件|合肥市【包河新区】，【梁昌琼/13275859808】已揽收"},{"time":"2017-03-24 21:37:38","action":"合肥市|发件|合肥市【包河新区】，正发往【合肥转运中心】"},{"time":"2017-03-24 21:52:58","action":"合肥市|到件|到合肥市【合肥转运中心】"},{"time":"2017-03-24 21:58:53","action":"合肥市|发件|合肥市【合肥转运中心】，正发往【天津转运中心】"},{"time":"2017-03-25 23:26:25","action":"天津市|到件|到天津市【天津转运中心】"},{"time":"2017-03-26 02:37:31","action":"天津市|发件|天津市【天津转运中心】，正发往【秦皇岛集散仓】"},{"time":"2017-03-26 09:28:45","action":"秦皇岛市|到件|到秦皇岛市【秦皇岛集散仓】"},{"time":"2017-03-26 11:26:48","action":"秦皇岛市|发件|秦皇岛市【秦皇岛集散仓】，正发往【秦皇岛市区六部】"},{"time":"2017-03-26 12:08:56","action":"秦皇岛市|到件|到秦皇岛市【秦皇岛市区六部】"},{"time":"2017-03-26 12:50:06","action":"秦皇岛市|派件|秦皇岛市【秦皇岛市区六部】，【快递驿站/15303357541】正在派件"},{"time":"2017-03-26 18:23:16","action":"秦皇岛市|签收|秦皇岛市【秦皇岛市区六部】，快递驿站 已签收"}],"status":0,"error_code":0,"reason":"Succes"}
+
+
+
+
+
+
+http://api.avatardata.cn/ExpressNumber/Company?key=6bd714af49fc4ec9bff4907ecde302b8
+
+{"result":[{"code":"shentong","name":"申通快递","tel":"400-889-5543","web":"http://www.sto.cn"},{"code":"yuantong","name":"圆通速递","tel":"021-69777888/999","web":"http://www.yto.net.cn"},{"code":"yunda","name":"韵达快运","tel":"400-821-6789","web":"http://www.yundaex.com"},{"code":"zhongtong","name":"中通快递","tel":"021-39777777","web":"http://www.zto.cn"},{"code":"shunfeng","name":"顺丰速运","tel":"95338","web":"http://www.sf-express.com"},{"code":"huitong","name":"百世快递(原汇通)","tel":"021-62963636","web":"http://www.htky365.com"},{"code":"tiantian","name":"天天快递","tel":"400-820-8198","web":"http://www.ttkdex.com"},{"code":"zhaijisong","name":"宅急送","tel":"4006-789-000","web":"http://www.zjs.com.cn"},{"code":"quanfeng","name":"全峰快递","tel":"400-100-0001","web":"http://www.qfkd.com.cn"},{"code":"debang","name":"德邦物流","tel":"95353","web":"http://www.deppon.com"},{"code":"aae","name":"AAE快递","tel":"400-610-0400","web":"http://cn.aaeweb.com"},{"code":"anxinda","name":"安信达快递","tel":"查询电话：021-54224681 54224682 54224685","web":"http://www.anxinda.com"},{"code":"anjie","name":"安捷快递","tel":"400565656","web":"http://www.anjelex.com"},{"code":"aramex","name":"Aramex","tel":"+86 (0571) 85092777","web":"http://www.aramex.com"},{"code":"abc","name":"爱彼西快递","tel":"400-711-8899/400-818-0571","web":"http://www.abccod.com"},{"code":"anxun","name":"安迅物流","tel":"010-5928 8730","web":"http://www.anxl.com.cn"},{"code":"ande","name":"安得物流","tel":"400-000-0056","web":"http://www.annto.com"},{"code":"aol","name":"AOL快递","tel":"020-36413533","web":"http://www.aol-au.com"},{"code":"ees","name":"百福东方快递","tel":"010-57169000","web":"http://www.ees.com.cn"},{"code":"baotongda","name":"宝通达物流","tel":"86-0755-83261581","web":"http://www.btdair.com"}],"error_code":0,"reason":"Succes"}

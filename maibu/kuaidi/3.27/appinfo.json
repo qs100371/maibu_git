@@ -1,0 +1,14 @@
+{
+  "uuid": "37e3d305cf1369714a1fe88533d6ebc9",
+  "name": "快递去哪儿了",
+  "icon": "RES_ICON1",
+  "version": "1.0.0",
+  "watchface": "false",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_ICON1",
+        "file": "icon.bmp"
+      }
+      ]
+      }

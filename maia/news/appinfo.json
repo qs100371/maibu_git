@@ -1,0 +1,15 @@
+{
+  "uuid": "9b2abb241e875dcbe5e4af8ee8837cb8",
+  "name": "新闻头条",
+  "icon": "",
+  "version": "1.0.0",
+  "watchface": "true",
+  "device_type": "120",
+  "resources": [
+        {
+        "type": "bmp",
+        "name": "RES_BITMAP_WATCHFACE_NEWS_BG",
+        "file": "bg.bmp"
+      }
+      ]
+      }

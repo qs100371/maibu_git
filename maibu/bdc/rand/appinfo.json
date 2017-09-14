@@ -1,0 +1,26 @@
+{
+  "uuid": "db491f713e8a2a075655226b53729193",
+  "name": "我要背单词",
+  "icon": "",
+  "version": "1.0.0",
+  "watchface": "true",
+  "resources": [
+	    {
+        "type": "file",
+        "name": "MY_FILE_KEY",
+        "file": "data.txt"
+      }, 
+	   {
+        "type": "bmp",
+        "name": "RES_BITMAP_WATCHFACE_LITTLE_NOTE_BG",
+        "file": "bg.bmp"
+       },
+	   {
+        "type": "bmp",
+        "name": "RES_BITMAP_WATCHFACE_LITTLE_NOTE_BG01",
+        "file": "bg-01.bmp"
+       }
+	   
+	  	  
+      ]
+      }

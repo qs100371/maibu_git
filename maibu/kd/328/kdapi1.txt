@@ -1,0 +1,10 @@
+kdapi
+
+http://www.kuaidiapi.cn/rest/?uid=86310&key=5190ba71d0b947e59fe9eab1accce1f7&order=884573866664145695&id=yuantong&last=true
+
+
+{"id":"yuantong","name":"圆通快递","order":"884573866664145695","message":"","errcode":"0000","status":2,"data":[{"time":"2017-03-27 19:56:53","content":"北京市朝阳区东坝公司 已打包"},{"time":"2017-03-27 17:15:37","content":"北京市朝阳区东坝公司(点击查询电话) 已揽收"},{"time":"2017-03-27 16:10:15","content":"北京市朝阳区东坝公司 取件人: 刘麟锋 已收件"}]}
+
+
+
+http://www.kuaidiapi.cn/rest/?uid=86310&key=5190ba71d0b947e59fe9eab1accce1f7&order=50442951903914&id=huitong&last=true

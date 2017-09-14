@@ -1,0 +1,86 @@
+{
+  "uuid": "cab0fabac26febb5ca44d6ef8cf9be5f",
+  "name": "课程表",
+  "icon": "",
+  "version": "2.1.0",
+  "watchface": "true",
+  "device_type": "120",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_BITMAP_BG",
+        "file": "bg.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_BG2",
+        "file": "bg2.bmp"
+      },
+        
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_0",
+        "file": "0.bmp"
+      },
+	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_1",
+        "file": "1.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_2",
+        "file": "2.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_3",
+        "file": "3.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_4",
+        "file": "4.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_5",
+        "file": "5.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_6",
+        "file": "6.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_7",
+        "file": "7.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_8",
+        "file": "8.bmp"
+      },
+	  	  
+	  {
+        "type": "bmp",
+        "name": "RES_BITMAP_NUMBER_9",
+        "file": "9.bmp"
+      },
+      {
+        "type": "bmp",
+        "name": "RES_BITMAP_REMIND",
+        "file": "remind.bmp"
+      }
+	  	  
+      ]
+      }

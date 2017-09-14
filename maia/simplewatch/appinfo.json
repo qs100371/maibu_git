@@ -1,0 +1,15 @@
+{
+  "uuid": "8fa3d441c787b7b1dc7f590daac42fb0",
+  "name": "简单指针",
+  "icon": "",
+  "version": "2.1.0",
+  "watchface": "true",
+  "device_type": "120",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_BG",
+        "file": "bg.bmp"
+      }
+      ]
+      }

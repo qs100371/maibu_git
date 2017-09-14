@@ -1,0 +1,15 @@
+{
+  "uuid": "06ac39c1835065c63fa31442f3c4cdcb",
+  "name": "简单运动",
+  "icon": "",
+  "version": "1.0.0",
+  "watchface": "true",
+  "device_type": "120",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_BG",
+        "file": "bg.bmp"
+      }
+      ]
+      }

@@ -1,0 +1,14 @@
+{
+  "uuid": "70621330576954f6a941b041804d377a",
+  "name": "双色球",
+  "icon": "RES_ICON",
+  "version": "1.0.0",
+  "watchface": "false",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_ICON",
+        "file": "icon.bmp"
+      }
+      ]
+      }

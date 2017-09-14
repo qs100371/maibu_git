@@ -1,0 +1,19 @@
+{
+  "uuid": "2549950c681018f5bbbffd82a887d0f6",
+  "name": "课程表",
+  "icon": "RES_ICON1",
+  "version": "1.0.0",
+  "watchface": "false",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_ICON1",
+        "file": "icon.bmp"
+      },
+      {
+        "type": "bmp",
+        "name": "RES_BITMAP_REMIND",
+        "file": "remind.bmp"
+      }
+      ]
+      }

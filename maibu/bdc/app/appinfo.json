@@ -1,0 +1,29 @@
+{
+  "uuid": "f2c7fb9987a43ca7a75aa93a33d51ca3",
+  "name": "背单词",
+  "icon": "APP_ICON",
+  "version": "0.0.1",
+  "watchface": "false",
+  "resources": [
+	    {
+        "type": "file",
+        "name": "MY_FILE_KEY",
+        "file": "data.txt"
+      }, 
+	   {
+        "type": "bmp",
+        "name": "RES_BITMAP_WATCHFACE_LITTLE_NOTE_BG",
+        "file": "bg.bmp"
+       },
+	   {
+        "type": "bmp",
+        "name": "RES_BITMAP_WATCHFACE_LITTLE_NOTE_BG01",
+        "file": "bg-01.bmp"
+       },
+	   {
+        "type": "bmp",
+        "name": "APP_ICON",
+        "file": "bdcapp.bmp"
+       }
+      ]
+      }

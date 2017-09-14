@@ -1,0 +1,14 @@
+{
+  "uuid": "a06286c0a3501b887427b7a7bf0b67be",
+  "name": "我去哪儿了",
+  "icon": "RES_ICON1",
+  "version": "1.0.0",
+  "watchface": "false",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_ICON1",
+        "file": "icon.bmp"
+      }
+      ]
+      }

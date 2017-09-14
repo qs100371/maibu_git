@@ -1,0 +1,64 @@
+{
+  "uuid": "96671c2ac77224ae4adccb3838df9fed",
+  "name": "简约现代",
+  "icon": "",
+  "version": "1.0.0",
+  "watchface": "true",
+  "resources": [
+  {
+        "type": "bmp",
+        "name": "RES_WEATHER_CLOUDY",
+        "file": "icon_cloudy.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_FOG",
+        "file": "icon_fog.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_OVERCAST",
+        "file": "icon_overcast.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_RAIN_1",
+        "file": "icon_rain_1.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_RAIN_2",
+        "file": "icon_rain_2.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_RAIN_3",
+        "file": "icon_rain_3.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_SNOW_1",
+        "file": "icon_snow_1.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_SNOW_2",
+        "file": "icon_snow_2.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_SNOW_3",
+        "file": "icon_snow_3.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_SUNNY",
+        "file": "icon_sunny.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_WEATHER_NODATA",
+        "file": "refreshing.bmp"
+      }
+      ]
+      }

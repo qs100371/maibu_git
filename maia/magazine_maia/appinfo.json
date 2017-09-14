@@ -1,0 +1,55 @@
+{
+  "uuid": "4ace393b5a6b965e653f440870fd368e",
+  "name": "杂志锁屏",
+  "icon": "",
+  "version": "1.0.1",
+  "watchface": "true",
+   "device_type": "120",
+  "resources": [
+      {
+        "type": "file",
+        "name": "MY_FILE_KEY",
+        "file": "data.txt"
+      }, 
+	  {
+        "type": "bmp",
+        "name": "RES_BG000",
+        "file": "000.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG001",
+        "file": "001.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG002",
+        "file": "002.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG003",
+        "file": "003.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG004",
+        "file": "004.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG005",
+        "file": "005.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG006",
+        "file": "006.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG007",
+        "file": "007.bmp"
+      }
+      ]
+      }

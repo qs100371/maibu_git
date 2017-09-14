@@ -1,0 +1,19 @@
+{
+  "uuid": "af54abc6f78347edc2e8c2cbe9459345",
+  "name": "宋词",
+  "icon": "",
+  "version": "1.0.0",
+  "watchface": "true",
+  "resources": [
+        {
+        "type": "bmp",
+        "name": "BG",
+        "file": "bg.bmp"
+      },
+	  {
+        "type": "file",
+        "name": "MY_FILE_KEY",
+        "file": "data.txt"
+      }
+      ]
+      }

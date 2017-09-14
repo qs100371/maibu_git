@@ -1,0 +1,19 @@
+{
+  "uuid": "34441cad0ab52abce31d9c02490200c0",
+  "name": "运动指针",
+  "icon": "",
+  "version": "1.0.1",
+  "watchface": "true",
+  "resources": [
+      {
+        "type": "bmp",
+        "name": "RES_BITMAP_WATCHFACE_OFFICIAL_BG01",
+        "file": "official_bg.bmp"
+      },
+	        {
+        "type": "bmp",
+        "name": "RES_BITMAP_WATCHFACE_OFFICIAL_CENTER01",
+        "file": "center.bmp"
+      }
+      ]
+      }
