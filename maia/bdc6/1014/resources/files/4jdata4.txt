@@ -1,0 +1,604 @@
+sympathy n.同情;一致,同感
+synthetic a.综合的;合成的
+system n.系统,体系;制度
+systematic(al) a.有系统的;有计划的
+table n.桌子;餐桌;项目表
+tablet n.碑,匾;药片
+tag n.附加语;标签
+tail n.尾巴;末尾部分
+tailor n.裁缝 vt.裁制衣服
+take vt.拿;抓;拿走;吃
+tale n.故事,传说
+talent n.天才;才能;人才
+talk vi.讲话 vt.谈论
+tall n.高的,身材高的
+tame a.驯服的;顺从的
+tan n.棕褐色 a.棕黄色的
+tank n.坦克;大容器,槽
+tap vt.&vi.&n.轻叩
+tap n.塞子;龙头 vt.开发
+tape n.线带;磁带,录音带
+target n.靶,标的;目标
+task n.任务,工作,作业
+taste vt.尝;尝到 n.味觉
+tax n.税,税款;负担
+taxi n.出租汽车
+tea n.茶;茶叶;茶树
+teach vt.讲;教育 vt.教书
+teacher n.教师,老师,先生
+teaching n.教学,讲授;教导
+team n.队,组
+tear n.眼泪,泪珠
+tear vt.撕开,撕裂
+technical a.技术的,工艺的
+technician n.技术员,技师
+technique n.技术,技巧;技能
+technology n.工艺学,工艺,技术
+tedious a.冗长乏味的,沉闷的
+teenager n.青少年
+telegram n.电报
+telegraph n.电报机;电报
+telephone n.电话 vi.打电话
+telescope n.望远镜
+television n.电视;电视机
+tell vt.讲述;吩咐;辨别
+temper n.韧度;心情,情绪
+temperature n.温度;体温
+temple n.圣堂,神殿,庙宇
+temporary a.暂时的,临时的
+tempt vt.引诱,诱惑;吸引
+temptation n.诱惑,引诱
+ten num.十,十个
+tenant n.承担人,房客,佃户
+tend vt.照管,照料,护理
+tend vi.走向,趋向;倾向
+tendency n.趋向,趋势,倾向
+tender a.嫩的;脆弱的
+tennis n.网球,网球运动
+tense n.时态,时
+tense a.拉紧的,绷紧的
+tent n.帐篷
+tenth num.第十;十分之一
+term n.期;学期;条件;词
+terminal a.末端的 n.末端
+terrible a.可怕的;极度的
+terrific a.可怕的;极大的
+territory n.领土,版图;领域
+terror n.恐怖,惊骇
+test n.&vt.试验;检验
+text n.原文,本文;课文
+textbook n.课本,教科书
+textile n.纺织品 a.纺织的
+than conj.(比较级)比
+thank vt.谢谢,感谢 n.感谢
+that a.那 pron.那 ad.那样
+the art.(定冠词)这,那
+theatre n.戏院;戏剧;教室
+their pron.他(她、它)们的
+theirs pron.他(她)们的东西
+them pron.(宾格)他们
+themselves pron.他们自己
+then ad.当时;然后;那么
+theoretical a.理论(上)的
+theory n.理论;学说;意见
+there ad.在那里;在那点上
+thereby ad.因此,从而,由此
+therefore ad.因此,所以
+thermometer n.温度计,寒暑表
+these a.&pron.这些
+they pron.(主格)他(她)们
+thick a.厚的;密的;浓
+thickness n.厚(度);密(度)
+thief n.窃贼,偷窃犯
+thin a.薄的;淡的 vi.变薄
+thing n.物;用品;事;情况
+think vt.想;想要;认为
+third num.第三;三分之一
+thirdly ad.第三
+thirst n.渴,口渴;渴望
+thirsty a.渴的;渴望的
+thirteen num.十三,十三个
+thirty num.三十,三十个
+this a.这;今 pron.这
+thorn n.刺,棘;荆棘;蒺藜
+thorough a.彻底的;详尽的
+those pron.那些
+though conj.虽然 ad.可是
+thought n.思想;思维;想法
+thoughtful a.沉思的;体贴的
+thousand num.千,千个 n.无数
+thread n.线;丝;螺纹;头绪
+threat n.威胁,恐吓,凶兆
+threaten vt.&vi.威胁,恐吓
+three num.三,三个
+thrill n.一阵激动
+thrive vi.兴旺,繁荣,旺盛
+throat n.咽喉,喉咙;嗓音
+throne n.宝座,御座;王位
+throng n.群,人群 vt.挤满
+through prep.穿过ad.从头到尾
+throughout prep.遍及 ad.到处
+throw vt.投,掷,抛,扔
+thrust vt.插,刺 n.插;讽刺
+thumb n.(大)拇指
+thunder n.雷 vi.打雷 vt.吼出
+Thursday n.星期四
+thus ad.如此,这样;因而
+tick n.滴答声;记号
+ticket n.票,券;纲领;传票
+tide n.潮,潮汐;潮流
+tidy a.整洁的;整齐的
+tie n.领带;联系 vt.系
+tiger n.虎
+tight a.紧的;紧身的
+till prep.conj.直到…为止
+timber n.木材,木料
+time n.时间;时机;次,回
+timetable n.时间表,时刻表
+timid a.胆怯的;羞怯的
+tin n.锡;罐头
+tiny a.微小的,极小的
+tip n.梢,末端,尖,尖端
+tip vt.轻击 vi.给小费
+tire vi.疲劳,累;厌倦
+tired a.疲劳的;厌倦的
+tissue n.薄绢;薄纸;组织
+title n.标题,题目;称号
+to prep.到,向,达到
+toast n.烤面包 vt.烘,烤
+toast n.祝酒;祝酒词
+tobacco n.烟草,烟叶
+today ad.在今天;现在
+toe n.脚趾,足尖
+together ad.共同,一起
+toilet n.厕所,盥洗室,浴室
+tolerance n.忍受,容忍;公差
+tolerate vt.忍受,容忍,宽恕
+tomato n.番茄,西红柿
+tomb n.坟,冢
+tomorrow ad.在明天 n.明天
+ton n.吨;大量
+tone n.音;腔调;声调
+tongue n.舌,舌头;语言
+tonight ad.在今夜 n.今夜
+too ad.也,还;太,过分
+tool n.工具,器具,用具
+tooth n.牙齿
+top n.顶;首位 a.顶的
+topic n.题目,论题,话题
+torch n.火炬,火把;手电筒
+torrent n.奔流,激流,洪流
+tortoise n.龟,乌龟
+torture n.拷问;折磨 vt.拷打
+toss vt.&vi.扔,抛,掷
+total a.总的 vi.合计,总共
+touch vt.触摸;触动 n.触
+tough a.坚韧的;健壮的
+tour n.&vi.旅行,游历
+tourist n.旅游者,观光者
+toward(s) prep.向;对于;接近
+towel n.毛巾,手巾
+tower n.塔 vi.屹立,高耸
+town n.镇,市镇,城镇
+toy n.玩具,玩物
+trace n.痕迹;丝毫 vt.跟踪
+track n.行踪;路径;轨道
+tractor n.拖拉机;牵引车
+trade n.贸易;职业 vi.交易
+tradition n.传统,惯例
+traditional a.传统的,惯例的
+traffic n.交通,通行;交通量
+tragedy n.悲剧;惨事,惨案
+trail n.痕迹;小径 vt.跟踪
+train vt.培养 n.列车;队列
+training n.训练,锻炼,培养
+traitor n.叛徒,卖国贼
+tram n.(有轨)电车
+tramp n.流浪者,游民
+transfer vt.转移;调动vi.转移
+transform vt.改变;改造;变换
+transformation n.变化;改造;转变
+transformer n.变压器,转换器
+transistor n.晶体管
+translate vt.翻译,译 vt.翻译
+translation n.翻译;译文,译本
+transmission n.传送;传动;发射
+transmit vt.传送,传达;发射
+transparent a.透明的;易识破的
+transport vt.运输 n.运输
+transportation n.运输,运送,客运
+trap n.陷阱;诡计 vt.诱骗
+travel vi.&vi.&n.旅行
+tray n.(浅)盘,托盘,碟
+treason n.谋反,通敌,叛国罪
+treasure n.财富;珍宝 vt.珍视
+treat vt.对待;处理 n.款待
+treatment n.待遇;治疗,疗法
+treaty n.条约;协议,协定
+tree n.树
+tremble vi.发抖,哆嗦;摇动
+tremendous a.极大的,非常的
+trend vi.伸向;倾向 n.倾向
+trial n.试,试验;审判
+triangle n.三角(形)
+tribe n.部落,宗族
+trick n.诡计;窍门 vt.哄骗
+trifle n.小事,琐事;少许
+trim a.整齐的 vt.使整齐
+trip vi.绊;失足 vt .绊倒
+triumph n.凯旋;胜利 vi.成功
+troop n.军队;一群,大量
+tropical a.热带的
+trouble n.烦恼;困难 vi.烦恼
+troublesome a.令人烦恼的;麻烦的
+trousers n.裤子,长裤
+truck n.卡车,载重汽车
+true a.真的;忠实的
+truly ad.真正地;忠实地
+trumpet n.喇叭,小号
+trunk n.树干;大衣箱,皮箱
+trust n.信任 vt.相信;委托
+truth n.真理;真实;真实性
+try vt.试;审问 vi.尝试
+tub n.桶,盆,浴缸,浴盆
+tube n.管;电子管,显像管
+tuck vt.折短,卷起;塞
+Tuesday n.星期二
+tuition n.教,教诲;学费
+tumble vi.摔倒,跌倒;打滚
+tune n.调子;和谐 vt.调谐
+tunnel n.隧道,坑道,地道
+turbine n.叶轮机,汽轮机
+turbulent a.骚动的,骚乱的
+turkey n.火鸡;火鸡肉
+turn vt.转;翻 vi.转动
+turning n.旋转;变向;转弯处
+turnip n.萝卜,芜菁
+tutor n.家庭教师;导师
+twelfth num.第十二
+twelve num.十二,十二个
+twentieth num.第二十
+twenty num.二十,二十个
+twice ad.两次,两倍
+twin a.孪生的 n.孪生儿
+twinkle vi.闪烁,闪耀
+twist vt.捻;拧 vi.&n.扭弯
+two num.二,两个
+type n.型,类型 vi.打字
+typewriter n.打字机
+typhoon n.台风
+typical a.典型的,代表性的
+typist n.打字员
+tyre n.轮胎,车胎
+ugly a.丑陋的;可怕的
+ultimate a.最后的,最终的
+ultimately ad.最终,最后
+umbrella n.伞,雨伞
+unable a.不能的,不会的
+unbearable a.难堪的,忍受不了的
+uncertain a.无常的;不确定的
+uncle n.伯父,叔父,舅父
+uncomfortable a.不舒服的;不自在的
+unconscious a.不省人事的
+uncover vt.揭开…的盖子
+under prep.在…下面;低于.
+undergo vt.经历,经受,忍受
+undergraduate n.大学肆业生
+underground a.地下的;秘密的
+underline vt.划线于…之下
+underneath ad.在下面,在底下
+understand vt.懂;获悉 vi.懂得
+understanding n.理解;理解力;协定
+undertake vt.从事;承担;保证
+undertaking n.任务,事业;许诺
+undo vt.解开,打开;取消
+undoubtedly ad.无容置疑,肯定地
+uneasy a.心神不安的,忧虑的
+unexpected a.想不到的,意外的
+unfair a.不公平的,不公正的
+unfortunate a.不幸的;可取的
+unfortunately ad.不幸地
+unhappy a.不幸福的,不快乐的
+uniform a.一样的 n.制服
+union n.联合;团结;协会
+unique a.唯一的,独一无二的
+unit n.单位;单元;部件
+unite vi.联合 vt.使联合
+unity n.单一;统一;团结
+universal a.宇宙的;普遍的
+universe n.宇宙,世界
+university n.大学,综合性大学
+unjust a.非正义的;不公平的
+unkind a.不仁慈的,不和善的
+unknown a.不知道的;未知的
+unless conj.除非,如果不
+unlike a.不同的 prep.不象…
+unlikely a.未必的,未必可能的
+unload vt.卸(货) vi.卸货
+unlucky a.不幸的;不吉的
+unnecessary a.不必要的,多余的
+unpleasant a.令人不快的,讨厌的
+unsatisfactory a.不能令人满意的
+unstable a.不稳固的;不稳定的
+unsuitable a.不合适的,不适宜的
+until prep&conj.直到…为止
+unusual a.不平常的;独特的
+unusually a.不平常地,非常
+unwilling a.不愿意的
+up ad.向上;起床,起来
+upon prep.在…上;在…旁
+upper a.上面的;地位较高的
+upright a.垂直的;正直的
+upset vt.弄翻,打翻,倾覆
+upside-down a.颠倒的,乱七八糟的
+upstairs ad.在楼上 a.楼上的
+up-to-date a.直到最近的,现代的
+upward a.向上的,上升的
+upwards ad.趋向上升;以上
+urge vt.推进;催促 n.冲动
+urgent a.紧急的;强求的
+us pron.(宾格)我们
+usage n.使用,对待;惯用法
+use vt.用;耗费 n.用
+used vi.过去常常
+used a.旧的;习惯于…的
+useful a.有用的,有益的
+useless a.无用的,无价值的
+user n.用户,使用者
+usual a.通常的;平常的
+usually ad.通常
+utility n.效用,有用,实用
+utilize vt.利用
+utmost a.最远的 n.极限
+utter a.完全的,彻底的
+utter vt.发出,说,讲
+vacant a.空的;未被占用的
+vacation n.假期,休假
+vacuum n.真空;真空吸尘器
+vague a.模糊的,含糊的
+vain a.徒劳的;自负的
+valid a.有效的;正当的
+valley n.(山)谷,溪谷;流域
+valuable a.值钱的;有价值的
+value n.价值;价格 vt.评价
+van n.大篷车,运货车
+vanish vi.突然不见,消失
+vanity n.虚荣心,虚夸
+vapour n.汽,蒸气
+variable a.易变的 n.变量
+variation n.变化,变动;变异
+variety n.多样化;种类;变种
+various a.各种各样的,不同的
+vary vt.改变;使多样化
+vase n.瓶,花瓶
+vast a.巨大的;大量的
+vegetable n.植物;蔬菜
+vehicle n.车辆,机动车
+veil n.面纱,面罩;遮蔽物
+velocity n.速度,速率
+velvet n.丝绒,天鹅绒
+venture n.&vi.冒险 vt.敢于
+verb n.动词
+verify vt.证实,查证;证明
+version n.译文;说法;改写本
+vertical a.垂直的,竖式的
+very ad.很;完全 a.真的
+vessel n.容器;船,飞船;管
+vest n.汗衫;背心;内衣
+veteran n.老兵,老手
+vex vt.使烦恼,使恼火
+via prep.经过;通过
+vibrate vt.使颤动 vi.颤动
+vibration n.颤动,振动;摆动
+vice n.罪恶;恶习;缺点
+vice n.(老)虎钳
+victim n.牺牲者,受害者
+victorious a.胜利的,得胜的
+victory n.胜利,战胜
+video a.电视的 n.电视
+view n.看;视力;风景
+viewpoint n.观点,看法,见解
+vigorous a.朝气蓬勃的
+village n.乡村,村庄
+vine n.葡萄树
+vinegar n.醋
+violence n.猛烈,激烈;暴力
+violent a.猛烈的;狂暴的
+violet n.紫罗兰
+violin n.小提琴
+virtually ad.实际上,事实上
+virtue n.善;美德;优点
+visible a.可见的,看得见的
+vision n.视;想象力;梦幻
+visit vt.&n.访问,参观
+visitor n.访问者;游客
+visual a.看的;看得见的
+vital a.生命的;有生命力的
+vitamin n.维生素,维他命
+vivid a.鲜艳的;生动的
+vocabulary n.词汇表;词汇,语汇
+voice n.说话声;意见;语态
+volcano n.火山
+volleyball n.排球,排球运动
+volt n.伏特,伏
+voltage n.电压
+volume n.卷,册;容积;音量
+voluntary a.自愿的,志愿的
+vote n.选举,投票,表决
+voyage n.&vi.航海,航空
+wage n.工资,报酬
+wage vt.开展(运动)
+waggon n.四轮运货马车
+waist n.腰,腰部
+wait vi.等,等候 n.等待
+waiter n.侍者,服务员
+wake vi.醒,醒来 vt.唤醒
+waken vi.醒来 vt.弄醒
+walk vi.&n.走,步行
+wall n.墙,壁,围墙,城墙
+wallet n.钱包,皮夹子
+wander vi.漫游;迷路;离题
+want vt.要 n.需要;缺乏
+war n.战争;冲突,斗争
+warm a.温暖的;热烈的
+warmth n.暖和,温暖;热烈
+warn vt.警告 vi.发生警告
+wash vt.洗;冲出 vi.洗涤
+waste n.浪费;废物;垃圾
+watch vt.&vi.观看 n.手表
+water n.水 vt.使湿,灌溉
+waterfall n.瀑布
+waterproof a.不透水的,防水的
+wave n.波;波涛 vi.波动
+wavelength n.波长
+wax n.蜡,蜂蜡
+way n.路;路线;方向
+we pron.(主格)我们
+weak a.弱的;软弱的
+weaken vt.削弱 vi.变弱
+weakness n.虚弱,软弱;弱点
+wealth n.财富,财产;丰富
+wealthy a.富的,富裕的
+weapon n.武器,兵器
+wear vt.穿着,戴;磨损
+weary a.疲倦的 vt.使疲乏
+weather n.天气
+weave vt.织,编 vi.纺织
+wedding n.婚礼
+Wednesday n.星期三
+weed n.杂草,野草 vi.除草
+week n.星期,周
+weekday n.周日,工作日
+weekend n.周末,周末假期
+weekly a.每周的 ad.每周
+weep vi.哭泣,流泪
+weigh vt.称…的重量;掂量
+weight n.重;砝码;重担
+welcome int.&n.&vt.欢迎
+weld vt.&n.焊接,熔接
+welfare n.幸福,福利
+well n.井
+well ad.好;完全地 int.嘿
+well-known a.众所周知的,出名的
+west n.西;西洋 a.西方的
+western a.西方的,西部的
+westward a.向西的 ad.向西
+wet a.湿的;下雨的
+what pron.什么 a.什么
+whatever pron.无论什么
+wheat n.小麦
+wheel n.轮,车轮
+when ad.什么时候;当…时
+whenever conj.无论何时,每当
+where ad.在哪里 pron.哪里
+wherever ad.究竟在哪里
+whether conj.是否
+which pron.哪一个 a.哪一个
+whichever a.无论哪个,无论哪些
+while conj.当…的时候;而
+whilst conj.&n.当…的时候
+whip vt.鞭笞;搅打 n.鞭子
+whirl vt.使回旋 vi.&n.回旋
+whisky n.威士忌酒
+whisper vt.低声地讲 vi.低语
+whistle n.口哨 vi.吹口哨
+white a.白的 n.白色
+whitewash vt.粉刷,涂白
+who pron.谁;…的人
+whoever pron.谁;无论谁
+whole a.完整的 n.全部
+wholly ad.完全地,全部
+whom pron.(宾格)谁
+whose pron.谁的;哪个人的
+why ad.为什么
+wicked a.坏的;令人厌恶的
+wide a.宽阔的 ad.全部地
+widely ad.广,广泛
+widen vt.加宽 vi.变宽
+widespread a.分布广的,普遍的
+widow n.寡妇
+width n.宽阔,广阔;宽度
+wife n.妻子
+wild a.野生的;野蛮的
+will aux.v.将要,会;愿
+willing a.愿意的,心甘情愿的
+win vi.获胜,赢 vt.赢得
+wind n.风;气息,呼吸
+wind vt.绕,缠绕 vi.卷曲
+window n.窗子,窗户,窗口
+wine n.葡萄酒,果酒
+wing n.翼,翅膀,翅
+winner n.获胜者,优胜者
+winter n.冬天,冬季
+wipe vt.&n.揩,擦
+wire n.金属线;电缆;电信
+wireless a.不用电线的,无线的
+wisdom n.智慧,才智;名言
+wise a.有智慧的,聪明的
+wish vt.祝;想要 n.希望
+wit n.智力,才智,智能
+with prep.和…一起;具有
+withdraw vt.收回;撤回vi.撤退
+within prep.在…里面
+without prep.无,没有,不
+withstand vt.抵挡,反抗
+witness n.证据;证人 vt.目击
+wolf n.狼
+woman n.妇女,女人,女性
+wonder n.惊异,惊奇;奇迹
+wonderful a.惊人的;极好的
+wood n.树林,森林;木头
+wooden a.木制的;呆板的
+wool n.羊毛;毛线,绒线
+woollen a.羊毛制的,毛线的
+word n.词;话;消息;语言
+work n.工作;职业 vi.工作
+worker n.工人;工作者,人员
+workman n.工人,劳动者,工匠
+workshop n.车间,工场;创作室
+world n.世界;世人;世间
+world-wide a.遍及全球的
+worm n.虫,蠕虫
+worry vt.使烦恼 vi.发愁
+worse a.更坏的 ad.更坏
+worship n.礼拜;崇拜 vt.崇拜
+worst a.最坏的 ad.最坏地
+worth a.值…的 n.价值
+worthless a.无价值的,无用的
+worthwhile a.值得花时间的
+worthy a.有价值的;值得的
+would aux.v.将;愿;总是
+wound n.创伤,伤 vt.使受伤
+wrap vt.裹,包,捆 n.披肩
+wreath n.花环,花圈,花冠
+wreck n.失事;残骸 vt.破坏
+wrist n.腕,腕关节
+write vt.书写;写 vi.写
+writer n.作者,作家,文学家
+writing n.书写,写;著作
+wrong a.错误的 ad.错,不对
+X-ray n.X射线,X光
+yard n.院子,庭院;场地
+yard n.码
+yawn vi.打呵欠 n.呵欠
+year n.年;年年
+yearly a.每年的 ad.一年一度
+yell vi.叫喊
+yellow a.黄(色)的 n.黄(色)
+yes ad.是,是的
+yesterday n.&ad.昨天,昨日
+yet ad.还;已经 conj.而
+yield vt.&vi.出产 n.产量
+you pron.你,你们
+young a.年轻的 n.青年们
+your pron.你的,你们的
+yours pron.你们的(东西)
+yourself pron.你自己;你亲自
+youth n.青春;青年们;青年
+youthful a.年轻的,青年的
+zeal n.热心,热情,热忱
+zealous a.热心的,热情的
+zebra n.斑马
+zero n.零;零点,零度
+zone n.地区,区域,范围
+zoo n.动物园

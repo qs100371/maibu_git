@@ -1,0 +1,25 @@
+{
+  "uuid": "f11828995d7f75dbf8aaa7c12ec070de",
+  "name": "唐诗",
+  "icon": "RES_BITMAP_ICON",
+  "version": "1.0.0",
+  "watchface": "false",
+  "device_type":"120",
+  "resources": [
+  {
+        "type": "bmp",
+        "name": "RES_BITMAP_ICON",
+        "file": "icon.bmp"
+      },
+        {
+        "type": "bmp",
+        "name": "BG",
+        "file": "bg.bmp"
+      },
+	  {
+        "type": "file",
+        "name": "MY_FILE_KEY",
+        "file": "data.txt"
+      }
+      ]
+      }

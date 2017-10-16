@@ -1,0 +1,30 @@
+{
+  "uuid": "4a7f1b6570fc944dc163a7559daa801b",
+  "name": "六级单词",
+  "icon": "",
+  "version": "1.0.1",
+  "watchface": "true",
+   "device_type": "120",
+  "resources": [
+      {
+        "type": "file",
+        "name": "MY_FILE_KEY",
+        "file": "data.txt"
+      }, 
+	  {
+        "type": "bmp",
+        "name": "RES_BG000",
+        "file": "000.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG001",
+        "file": "001.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_BG002",
+        "file": "002.bmp"
+      }
+      ]
+      }
