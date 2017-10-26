@@ -1,13 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <string.h>
 #include "maibu_sdk.h"
 #include "maibu_res.h"
+
+//显示界面定制
+#define APP_SETUP_KEY 666
+static uint8_t show_ap = 0, show_mp = 1, show_weather = 0, show_step = 1, show_speed = 1, show_floor = 1; //分别对应海拔气压、月相、天气、计步、速度
 
 /*窗口句柄*/
 static uint32_t g_window = -1;
 /*全局定时器*/
-static int8_t g_timer_id = -1, scale = 1;
+static int8_t g_timer_id = -1, ap_scale = 1, alt_scale = 1;
 /*GPS及海拔数据结构*/
 static SGpsAltitude g_gps_altitude;
 
@@ -276,8 +280,12 @@ static uint8_t min_pos[60][3][2] =
   {{80, 17}, {84, 86}, {93, 86}},
 
 };
+const static char lunar_day[30][8] = {"初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"};
+const static int32_t moon_phases[30] = {MOON1, MOON2, MOON2, MOON2, MOON2, MOON2, MOON3, MOON3, MOON4, MOON4, MOON4, MOON4, MOON4, MOON4, MOON5, MOON5, MOON6, MOON6, MOON6, MOON6, MOON6, MOON7, MOON7, MOON8, MOON8, MOON8, MOON8, MOON8, MOON8, MOON8};
+static uint32_t ap_data[25] = {0}, altitude_data[25];
 
-static uint32_t ap_data[25] = {0};
+static char stage_str[6][8] = {"  ", "热身", "燃脂", "心肺", "耐力", "极限"};//热身、燃脂、心肺、耐力、极限
+static enum GColor speedcolor[6] = { GColorBlack, GColorBlack, GColorGreen, GColorBlue, GColorPurple, GColorRed};
 
 const static char wday_str[7][8] = {"日", "一", "二", "三", "四", "五", "六"};
 
@@ -285,7 +293,7 @@ static uint32_t deltastep = 0 , speed = 0, pace = 0;
 static uint32_t updatetime = 0;
 static SportData last_data = {0};
 
-static P_Window init_watch(void);
+static P_Window init_watch();
 void weather_init_store()
 {
   /*创建保存天气图标文件*/
@@ -384,15 +392,7 @@ void window_reloading(void)
 
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *     function:  weather_request_web
- *    parameter:
- *       return:
- *  description:  请求网络数据
- * 	  other:
- *--------------------------------------------------------------------------------------
- */
+
 void weather_request_web()
 {
   /*拼接url请求地址, 注意url的缓存大小*/
@@ -405,15 +405,7 @@ void weather_request_web()
   g_comm_id_web = maibu_comm_request_web(url, param, 60 * 30);
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *     function:  weather_phone_recv_callback
- *    parameter:
- *       return:
- *  description:  接受手机数据回调
- * 	  other:
- *--------------------------------------------------------------------------------------
- */
+
 void weather_phone_recv_callback(enum ERequestPhone type, void *context)
 {
 
@@ -430,15 +422,7 @@ void weather_phone_recv_callback(enum ERequestPhone type, void *context)
   weather_request_web();
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *     function:
- *    parameter:
- *       return:
- *  description:  接受WEB数据回调
- * 	  other:
- *--------------------------------------------------------------------------------------
- */
+
 void weather_web_recv_callback(const uint8_t *buff, uint16_t size)
 {
   int8_t icon = 0;
@@ -458,16 +442,6 @@ void weather_web_recv_callback(const uint8_t *buff, uint16_t size)
 
 }
 
-
-/*
- *--------------------------------------------------------------------------------------
- *     function:  watch_time_change
- *    parameter:
- *       return:
- *  description:  系统时间有变化时，更新时间图层
- * 	      other:
- *--------------------------------------------------------------------------------------
- */
 static void watch_time_change(enum SysEventType type, void *context)
 {
   /*时间更改*/
@@ -519,75 +493,87 @@ static void timer_callback(date_time_t tick_time, uint32_t millis, void *context
 {
   float f_temp = 0;
   int i;
-
-  if (maibu_get_pressure(&f_temp) == 0)
+  char buff[20];
+  if (maibu_get_pressure(&f_temp) == 0)       //气压单位Pa
     {
-      char buff[20];
       sprintf(buff, "%.0f", (f_temp - 0.0)*100);
-
       for (i = 0;i < 24;i++)
         ap_data[i] = ap_data[i+1];
       ap_data[24] = atoi(buff);
     }
 
+  f_temp = 0;
+  if (maibu_get_altitude(&f_temp, 0) == 0)  //海拔单位 米
+    {
+      //sprintf(buff, "%.0f", (f_temp - 0.0)*10);
+      for (i = 0;i < 24;i++)
+        altitude_data[i] = altitude_data[i+1];
+      altitude_data[24] = (int)f_temp;//atoi(buff)
+    }
   return;
 }
 
-int32_t plot_ap_layer(P_Window p_window)
+P_Layer plot_data(uint32_t data[], uint32_t ZERO, uint8_t *scale, enum GColor color)
 {
   uint16_t x0 = 172, y0 = 176, w = 7;
-
-  P_Geometry p_g[1];
-
-  int i, num = 0, min = ap_data[24], max = min;
+  int i, num = 0;
+  uint32_t  min = data[24], max = min;
   for (i = 24;i >= 0;i--)
-    if (ap_data[i] > 0) num++;
+    if (data[i] != ZERO) num++;
     else
       break;
 
-  if (num < 2) return 0;
+  if (num < 2) return NULL;
   for (i = 23;i > 24 - num;i--)
     {
-      if (ap_data[i] < min) min = ap_data[i];
-      if (ap_data[i] > max) max = ap_data[i];
+      if (data[i] < min) min = data[i];
+      if (data[i] > max) max = data[i];
     }
 
-  scale = (max - min) / 88 + 1;
+  *scale = (max - min) / 80 + 1;
 
   Line l[num-1];
   for (i = 0; i < num - 1; i++)
     {
       l[i].p0.x = x0 - i * w;
-      l[i].p0.y = y0 - (ap_data[24-i] - min) / scale;
+      l[i].p0.y = y0 - (data[24-i] - min) / *scale;
       l[i].p1.x = x0 - (i + 1) * w;
-      l[i].p1.y = y0 - (ap_data[23-i] - min) / scale;
+      l[i].p1.y = y0 - (data[23-i] - min) / *scale;
     }
 
   LineSet ls = {num - 1, l};
-  Geometry lsg = {GeometryTypeLineSet, FillOutline, GColorRed, (void*)&ls};
+  Geometry lsg = {GeometryTypeLineSet, FillOutline, color, (void*)&ls};
+  P_Geometry p_g[1];
   p_g[0] = &lsg;
   LayerGeometry lg = {1, p_g};
 
+  /* P_Geometry p_pg[1];
+  LayerGeometry lg;
+  memset(&lg, 0, sizeof(LayerGeometry));
+  p_pg[lg.num++] = &lsg;
+  lg.p_g = p_pg; */
   /*图层1*/
-  P_Layer	 layer1 = NULL;
+  P_Layer	layer1 = NULL;
   layer1 = app_layer_create_geometry(&lg);
-
-  return (app_window_add_layer(p_window, layer1));
+  return (layer1);
 }
 
 P_Layer get_circle_layer1(enum GColor color)
 {
-  LayerGeometry lg;
-  P_Geometry p_geometry[1];
-  memset(&lg, 0, sizeof(LayerGeometry));
+  //LayerGeometry lg;
+  //P_Geometry p_geometry[1];
+  //memset(&lg, 0, sizeof(LayerGeometry));
   //memset(p_geometry, 0, sizeof(p_geometry));
 
   /*大圆心*/
   GPoint center1 = {88, 88};
   Circle c1 = {center1, 4};
   Geometry cg1 = {GeometryTypeCircle, FillArea, color, (void*)&c1};
-  p_geometry[lg.num++] = &cg1;
-  lg.p_g = p_geometry;
+  P_Geometry p_g[1];
+  p_g[0] = &cg1;
+  LayerGeometry lg = {1, p_g};
+  //p_geometry[lg.num++] = &cg1;
+  //lg.p_g = p_geometry;
 
   /*图层1*/
   P_Layer	 layer1 = NULL;
@@ -603,12 +589,15 @@ P_Layer get_time_hand_layer(uint8_t min, uint8_t time_pos[][3][2], enum GColor c
   GPoint points1[3] = {p1, p2, p3};
   Polygon po1 = {3, points1};
   Geometry pg1 = {GeometryTypePolygon, FillArea, color, (void*)&po1};
-  P_Geometry p_pg[1];
-  LayerGeometry lg;
-  memset(&lg, 0, sizeof(LayerGeometry));
-  p_pg[lg.num++] = &pg1;
-  lg.p_g = p_pg;
+  //P_Geometry p_pg[1];
+  //LayerGeometry lg;
+  //memset(&lg, 0, sizeof(LayerGeometry));
+  //p_pg[lg.num++] = &pg1;
+  //lg.p_g = p_pg;
 
+  P_Geometry p_g[1];
+  p_g[0] = &pg1;
+  LayerGeometry lg = {1, p_g};
 
   /*图层1*/
   P_Layer	 layer1 = NULL;
@@ -636,50 +625,119 @@ int32_t display_target_layerText(P_Window p_window, const GRect  *temp_p_frame, 
   return 0;
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *     function:  init_watch
- *    parameter:
- *       return:
- *  description:  生成表盘窗口
- * 	      other:
- *--------------------------------------------------------------------------------------
- */
-static P_Window init_watch(void)
+uint16_t get_lunar_day()
+{
+  SLunarData sld = {0};
+  maibu_get_lunar_calendar(NULL, &sld);
+  char buff[20] = {0};
+  sprintf(buff, "%s", sld.day);
+  int i = 0;
+  for (i = 0;i < 30;i++)
+    if (strcmp(buff, lunar_day[i]) == 0)
+      return i;
+}
+
+static void watchapp_comm_callback(enum ESyncWatchApp type, uint8_t *buf, uint16_t len)
+{
+
+  if (type == ESyncWatchAppUpdateParam)
+    {
+      if (len >= 6)
+        {
+          if (buf[0] == '0')
+            show_ap = 0;
+          else
+            show_ap = 1;
+          if (buf[1] == '0')
+            show_mp = 0;
+          else
+            show_mp = 1;
+          if (buf[2] == '0')
+            show_weather = 0;
+          else
+            show_weather = 1;
+          if (buf[3] == '0')
+            show_step = 0;
+          else
+            show_step = 1;
+          if (buf[4] == '0')
+            show_speed = 0;
+          else
+            show_speed = 1;
+          if (buf[5] == '0')
+            show_floor = 0;
+          else
+            show_floor = 1;
+
+          if (buf[6] == 'c' || buf[6] == 'C')  //清空气压海拔数据
+            {
+              memset(ap_data, 0, sizeof(ap_data));
+              int i;
+              for (i = 0;i < 25;i++)
+                altitude_data[i] = -10000;
+              ap_scale = 1;
+              alt_scale = 1;
+            }
+
+          window_reloading();
+
+          char buff[10] = {0};
+          sprintf(buff, "%06d", show_ap*100000 + show_mp*10000 + show_weather*1000 + show_step*100 + show_speed*10 + show_floor);
+          app_persist_write_data_extend(APP_SETUP_KEY, buff, sizeof(buff));
+        }
+      else
+        {
+          app_persist_delete_data(APP_SETUP_KEY);
+          show_ap = 1;
+          show_mp = 1;
+          show_weather = 1;
+          show_step = 1;
+          show_speed = 1;
+          show_floor = 0;
+          window_reloading();
+        }
+
+    }
+}
+
+
+static P_Window init_watch()
 {
   P_Window p_window = NULL;
   P_Layer p_layer = NULL;
 
-  P_Layer hl = NULL, ml = NULL, cl1 = NULL, apl = NULL;
+  P_Layer hl = NULL, ml = NULL, cl1 = NULL, apl = NULL, altl = NULL;
   static SportData data;
   maibu_get_sport_data(&data, 0);
 
-  //计算速度、配速
-  uint32_t updatetime1 = app_get_time_number();
+  if (show_speed)
+    {
+      //计算速度、配速
+      uint32_t updatetime1 = app_get_time_number();
 
-  if (updatetime1 - updatetime == 60)
-    {
-      deltastep = data.step - last_data.step;
-      if (deltastep >= 80)
+      if (updatetime1 - updatetime == 60)
         {
-          pace = 6000000 / (data.distance - last_data.distance);
-          speed = (data.distance - last_data.distance) * 60 / 10000;
+          deltastep = data.step - last_data.step;
+          if (deltastep >= 80)
+            {
+              pace = 6000000 / (data.distance - last_data.distance);
+              speed = (data.distance - last_data.distance) * 60 / 10000;
+            }
+          last_data = data;
+          updatetime = updatetime1;
         }
-      last_data = data;
-      updatetime = updatetime1;
+      else if (updatetime1 - updatetime > 60)
+        {
+          deltastep = 0;
+          pace = 0;
+          speed = 0;
+          last_data = data;
+          updatetime = updatetime1;
+        }
+      //
     }
-  else if (updatetime1 - updatetime > 60)
-    {
-      deltastep = 0;
-      pace = 0;
-      speed = 0;
-      last_data = data;
-      updatetime = updatetime1;
-    }
-  //
 
   char buff[30] = {0};
-
   /*创建一个窗口*/
   p_window = app_window_create();
   if (NULL == p_window) return NULL;
@@ -690,29 +748,46 @@ static P_Window init_watch(void)
   GRect frame = {{0, 0}, {176, 176}};
   display_target_layer(p_window, &frame, RES_WATCHFACE_OFFICIAL_BG);
 
-
+  int i;
   float f_temp = 0;
-  if (maibu_get_altitude(&f_temp, 0) == 0)
+  if (show_ap)
     {
-      frame.origin.x = 0;
-      frame.origin.y = 0;
-      frame.size.h = 16;
-      frame.size.w = 60;
-      sprintf(buff, "%dm", (int)f_temp);
-      display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
-    }
+      if (maibu_get_altitude(&f_temp, 0) == 0)
+        {
+          /* sprintf(buff, "%.0f", (f_temp - 0.0)*10);
+          i = atoi(buff);
+          sprintf(buff, "%d.%dm", i / 10, i % 10); */
+          frame.origin.x = 0;
+          frame.origin.y = 0;
+          frame.size.h = 16;
+          frame.size.w = 60;
+          sprintf(buff, "%dm", (int)f_temp);
+          display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
+        }
 
-  f_temp = 0;
-  if (maibu_get_temperature(&f_temp) == 0)
+      f_temp = 0;
+      if (maibu_get_temperature(&f_temp) == 0)
+        {
+          frame.origin.x = 116;
+          frame.origin.y = 0;
+          frame.size.h = 16;
+          frame.size.w = 60;
+          i = (int)f_temp;
+          i = i > 23 ? (2 * i - 36) : (i * 1.5 - 18);
+          sprintf(buff, "%d'C", i);
+          display_target_layerText(p_window, &frame, GAlignRight, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
+        }
+    }
+  if (show_mp)
     {
-      frame.origin.x = 116;
-      frame.origin.y = 0;
-      frame.size.h = 16;
-      frame.size.w = 60;
-      sprintf(buff, "%d'C", (int)f_temp);
-      display_target_layerText(p_window, &frame, GAlignRight, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
-    }
+      //显示月相
 
+      frame.origin.x = 24;
+      frame.origin.y = 68;
+      frame.size.h = 40;
+      frame.size.w = 40;
+      display_target_layer(p_window, &frame, moon_phases[get_lunar_day()]);
+    }
 
   frame.origin.x = 112;
   frame.origin.y = 80;
@@ -728,116 +803,155 @@ static P_Window init_watch(void)
   sprintf(buff, "%s", wday_str[dt.wday]);
   display_target_layerText(p_window, &frame, GAlignLeft, GColorRed, buff, U_GBK_SIMSUN_16, GColorWhite);
 
-  if (deltastep < 80)
+  if (show_step)
     {
       frame.origin.x = 20;
       frame.origin.y = 120;
       frame.size.h = 20;
       frame.size.w = 136;
-      sprintf(buff, "%d+%d", data.step, data.floor);
+      if (show_floor)
+        sprintf(buff, "%d+%d", data.step, data.floor);
+      else
+        sprintf(buff, "%d", data.step);
       display_target_layerText(p_window, &frame, GAlignCenter, GColorBlue, buff, U_ASCII_ARIAL_16, GColorWhite);
+    }
 
-      f_temp = 0;
-      if (maibu_get_pressure(&f_temp) == 0)
+  if (deltastep < 80)
+    {
+
+      if (show_ap)
         {
-          frame.origin.x = 0;
+          f_temp = 0;
+          if (maibu_get_pressure(&f_temp) == 0)
+            {
+              frame.origin.x = 0;
+              frame.origin.y = 160;
+              frame.size.h = 16;
+              frame.size.w = 100;
+              sprintf(buff, "%.0fPa", (f_temp - 0.0)*100);
+              display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
+            }
+
+          int8_t percent = 0;
+          maibu_get_battery_percent(&percent);
+          frame.origin.x = 96;
           frame.origin.y = 160;
           frame.size.h = 16;
-          frame.size.w = 100;
-          sprintf(buff, "%.0fPa", (f_temp - 0.0)*100);
-          display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
+          frame.size.w = 80;
+          sprintf(buff, "%d%%", percent);  //显示比例
+          display_target_layerText(p_window, &frame, GAlignRight, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
         }
 
-      int8_t percent = 0;
-      maibu_get_battery_percent(&percent);
-      frame.origin.x = 96;
-      frame.origin.y = 160;
-      frame.size.h = 16;
-      frame.size.w = 80;
-      //sprintf(buff, "%d%%", percent);
-      sprintf(buff, "X%d|%d%%", scale, percent);  //显示比例
-      display_target_layerText(p_window, &frame, GAlignRight, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
-
-
-
-      frame.origin.x = 68;
-      frame.origin.y = 20;
-      frame.size.h = 40;
-      frame.size.w = 40;
-
-      /*添加天气图标*/
-      app_persist_create(WEATHER_ICON_KEY, 1);
-      /*读取天气图标*/
-      int8_t icon_type = 0;
-      app_persist_read_data(WEATHER_ICON_KEY, 0, (unsigned char *)&icon_type, sizeof(int8_t));
-      /*如果icon_type大于0，显示天气图标*/
-      if (icon_type >= 0)
+      if (show_weather)
         {
-          display_target_layer(p_window, &frame, weather_get_icon_key(icon_type));
-        }
+          frame.origin.x = 68;
+          frame.origin.y = 20;
+          frame.size.h = 40;
+          frame.size.w = 40;
 
-      frame.origin.x = 68;
-      frame.origin.y = 60;
-      frame.size.h = 20;
-      frame.size.w = 40;
-      int8_t temp_int = 0;
-      app_persist_read_data(WEATHER_TEMP_KEY, 0, (unsigned char *)&temp_int, sizeof(int8_t));
-      if (temp_int == WEATHER_TEMP_SPEC)
-        {
-          strcpy(buff, "--");
-        }
-      else
-        {
-          sprintf(buff, "%d'C", temp_int);
-        }
+          /*添加天气图标*/
+          app_persist_create(WEATHER_ICON_KEY, 1);
+          /*读取天气图标*/
+          int8_t icon_type = 0;
+          app_persist_read_data(WEATHER_ICON_KEY, 0, (unsigned char *)&icon_type, sizeof(int8_t));
+          /*如果icon_type大于0，显示天气图标*/
+          if (icon_type >= 0)
+            {
+              display_target_layer(p_window, &frame, weather_get_icon_key(icon_type));
+            }
 
-      display_target_layerText(p_window, &frame, GAlignCenter, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
+          frame.origin.x = 68;
+          frame.origin.y = 60;
+          frame.size.h = 20;
+          frame.size.w = 40;
+          i = 0;
+          app_persist_read_data(WEATHER_TEMP_KEY, 0, (unsigned char *)&i, sizeof(int8_t));
+          if (i == WEATHER_TEMP_SPEC)
+            {
+              strcpy(buff, "--");
+            }
+          else
+            {
+              sprintf(buff, "%d'C", i);
+            }
+
+          display_target_layerText(p_window, &frame, GAlignCenter, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlack);
+        }
     }
   else  //步频大于80时显示
     {
-      frame.origin.x = 20;
-      frame.origin.y = 120;
-      frame.size.h = 20;
-      frame.size.w = 136;
-      sprintf(buff, "%d+%d", data.step, data.floor);
-      display_target_layerText(p_window, &frame, GAlignCenter, GColorBlue, buff, U_ASCII_ARIAL_20, GColorWhite);
+      i = (deltastep - 60) / 20 ;
+      if (i > 5) i = 5;
 
+      if (show_speed)
+        {
+          frame.origin.x = 0;
+          frame.origin.y = 156;
+          frame.size.h = 20;
+          frame.size.w = 80;
+          sprintf(buff, "%d'%02d\"", pace / 60, pace % 60);
+          display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_20, speedcolor[i]);
 
-      frame.origin.x = 0;
-      frame.origin.y = 156;
-      frame.size.h = 20;
-      frame.size.w = 80;
-      sprintf(buff, "%d'%02d\"", pace / 60, pace % 60);
-      display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_20, GColorRed);
+          frame.origin.x = 86;
+          frame.origin.y = 156;
+          frame.size.h = 20;
+          frame.size.w = 90;
 
-      frame.origin.x = 86;
-      frame.origin.y = 156;
-      frame.size.h = 20;
-      frame.size.w = 90;
-
-      sprintf(buff, "x%d.%d|%d.%d", speed / 10, speed % 10, data.distance / 100000, (data.distance / 10000) % 10);
-      display_target_layerText(p_window, &frame, GAlignRight, GColorWhite, buff, U_ASCII_ARIAL_20, GColorRed);
+          sprintf(buff, "x%d.%d|%d.%d", speed / 10, speed % 10, data.distance / 100000, (data.distance / 10000) % 10);
+          display_target_layerText(p_window, &frame, GAlignRight, GColorWhite, buff, U_ASCII_ARIAL_20, speedcolor[i]);
 
 
 
-      frame.origin.x = 68;
-      frame.origin.y = 20;
-      frame.size.h = 40;
-      frame.size.w = 40;
-      display_target_layer(p_window, &frame, RUN_ICON);
+          frame.origin.x = 68;
+          frame.origin.y = 20;
+          frame.size.h = 10;
+          frame.size.w = 40;
+          display_target_layer(p_window, &frame, STAGE);
 
 
-      frame.origin.x = 68;
-      frame.origin.y = 60;
-      frame.size.h = 20;
-      frame.size.w = 40;
+          frame.origin.x = 68;
+          frame.origin.y = 30;
+          frame.size.h = 16;
+          frame.size.w = 40;
 
-      sprintf(buff, "%d", deltastep);
-      display_target_layerText(p_window, &frame, GAlignCenter, GColorWhite, buff, U_ASCII_ARIAL_20, GColorRed);
+          sprintf(buff, "%s", stage_str[i]);
+          display_target_layerText(p_window, &frame, GAlignCenter, GColorWhite, buff, U_ASCII_ARIAL_16, speedcolor[i]);
+
+          frame.origin.x = 68;
+          frame.origin.y = 48;
+          frame.size.h = 20;
+          frame.size.w = 40;
+
+          sprintf(buff, "%d", deltastep);
+          display_target_layerText(p_window, &frame, GAlignCenter, GColorWhite, buff, U_ASCII_ARIAL_20, speedcolor[i]);
+        }
     }
 
+  if (show_ap)
+    {
+      frame.origin.x = 136;
+      frame.origin.y = 116;
+      frame.size.h = 16;
+      frame.size.w = 40;
+      sprintf(buff, "x%d", ap_scale);
+      //sprintf(buff, "%d", altitude_data[24]);
+      display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_16, GColorRed);
 
-  plot_ap_layer(p_window);
+      frame.origin.x = 136;
+      frame.origin.y = 136;
+      frame.size.h = 16;
+      frame.size.w = 40;
+
+      sprintf(buff, "x%d", alt_scale);
+      display_target_layerText(p_window, &frame, GAlignLeft, GColorWhite, buff, U_ASCII_ARIAL_16, GColorBlue);
+
+
+      apl = plot_data(ap_data, 0, &ap_scale, GColorRed);
+      altl = plot_data(altitude_data, -10000, &alt_scale, GColorBlue);
+      app_window_add_layer(p_window, apl);
+      app_window_add_layer(p_window, altl);
+
+    }
 
   ml = get_time_hand_layer(dt.min, min_pos, colors[dt.min%4]);
 
@@ -848,29 +962,62 @@ static P_Window init_watch(void)
   app_window_add_layer(p_window, ml);
   app_window_add_layer(p_window, cl1);
 
-
-  if (dt.min % 10 == 0)
-    if (g_timer_id == -1)
-      g_timer_id = app_service_timer_subscribe(600000, timer_callback, NULL);
+  if (g_timer_id == -1 && dt.min % 10 == 0) //
+    {
+      //memset(ap_data, 0, sizeof(ap_data));
+      for (i = 0;i < 25;i++)
+        altitude_data[i] = -10000;
+      g_timer_id = app_service_timer_subscribe(600000, timer_callback, NULL);//600000
+    }
 
   return p_window;
 }
 
 
-
-/*
- *--------------------------------------------------------------------------------------
- *     function:  main
- *    parameter:
- *       return:
- *  description:  主程序
- * 	      other:
- *--------------------------------------------------------------------------------------
- */
 int main()
 {
+  //读取配制文件
+  char buff[10] = {0};
+  app_persist_create(APP_SETUP_KEY, sizeof(buff));
+  app_persist_read_data(APP_SETUP_KEY, 0, buff, sizeof(buff));
+  if (strlen(buff) >= 6)
+    {
+      if (buff[0] == '0')
+        show_ap = 0;
+      else
+        show_ap = 1;
+      if (buff[1] == '0')
+        show_mp = 0;
+      else
+        show_mp = 1;
+      if (buff[2] == '0')
+        show_weather = 0;
+      else
+        show_weather = 1;
+      if (buff[3] == '0')
+        show_step = 0;
+      else
+        show_step = 1;
+      if (buff[4] == '0')
+        show_speed = 0;
+      else
+        show_speed = 1;
+      if (buff[5] == '0')
+        show_floor = 0;
+      else
+        show_floor = 1;
 
-  /*初始化天气图标数据*/
+    }
+  else
+    {
+      show_ap = 1;
+      show_mp = 1;
+      show_weather = 1;
+      show_step = 1;
+      show_speed = 1;
+      show_floor = 0;
+    }
+  //////
   weather_init_store();
 
   /*创建显示表盘窗口*/
@@ -884,17 +1031,18 @@ int main()
   /*注册一个事件通知回调，当有时间改变时，立即更新时间*/
   maibu_service_sys_event_subscribe(watch_time_change);
 
-  /*注册接受WEB数据回调函数*/
-  maibu_comm_register_web_callback(weather_web_recv_callback);
-  /*注册接受手机数据回调函数*/
-  maibu_comm_register_phone_callback((CBCommPhone)weather_phone_recv_callback);
-
-
-  /*请求GPS数据*/
-  g_comm_id_gps = maibu_comm_request_phone(ERequestPhoneGPSAltitude,  NULL, 0);
-  /*注册通讯结果回调*/
-  maibu_comm_register_result_callback(weather_comm_result_callback);
-
+  maibu_comm_register_watchapp_callback(watchapp_comm_callback);
+  if (show_weather)
+    {
+      /*注册接受WEB数据回调函数*/
+      maibu_comm_register_web_callback(weather_web_recv_callback);
+      /*注册接受手机数据回调函数*/
+      maibu_comm_register_phone_callback((CBCommPhone)weather_phone_recv_callback);
+      /*请求GPS数据*/
+      g_comm_id_gps = maibu_comm_request_phone(ERequestPhoneGPSAltitude,  NULL, 0);
+      /*注册通讯结果回调*/
+      maibu_comm_register_result_callback(weather_comm_result_callback);
+    }
   return 0;
 }
 

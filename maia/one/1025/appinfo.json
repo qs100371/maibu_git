@@ -2,7 +2,7 @@
   "uuid": "8a532c1740edcc39ca6f439338ac1e43",
   "name": "One",
   "icon": "",
-  "version": "1.1.0",
+  "version": "3.2.0",
   "watchface": "true",
   "device_type": "120",
   "resources": [
@@ -68,8 +68,48 @@
       },
 	  {
         "type": "bmp",
-        "name": "RUN_ICON",
-        "file": "run.bmp"
+        "name": "MOON1",
+        "file": "m1.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "MOON2",
+        "file": "m2.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "MOON3",
+        "file": "m3.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "MOON4",
+        "file": "m4.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "MOON5",
+        "file": "m5.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "MOON6",
+        "file": "m6.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "MOON7",
+        "file": "m7.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "MOON8",
+        "file": "m8.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "STAGE",
+        "file": "stage.bmp"
       }
       ]
       }
