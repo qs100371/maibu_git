@@ -1,0 +1,26 @@
+{
+  "uuid": "19224bf57df62a3c4ef0bbe1ba7e3147",
+  "name": "糗事百科",
+  "icon": "IMAGE_ICON",
+  "version": "0.9.0",
+  "device_type": "120",
+  "watchface": "false",
+  "resources": [
+  		{
+        "type": "bmp",
+        "name": "IMAGE_ICON",
+        "file": "icon.bmp"
+        },
+	{
+        "type": "bmp",
+        "name": "RES_BITMAP_BG1",
+        "file": "bg1.bmp"
+      }
+	  ,
+	{
+        "type": "bmp",
+        "name": "RES_BITMAP_BG2",
+        "file": "bg2.bmp"
+      }
+    ]
+}
