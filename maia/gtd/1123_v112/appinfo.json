@@ -1,0 +1,35 @@
+{
+  "uuid": "29f53ac9ea5922e8c379732dd47869d6",
+  "name": "GTD",
+  "icon": "",
+  "version": "1.1.2",
+  "watchface": "true",
+  "device_type": "120",
+  "resources": [
+	  {
+        "type": "bmp",
+        "name": "RES_BG",
+        "file": "bg.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "ID0",
+        "file": "id0.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "ID1",
+        "file": "id1.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "ID2",
+        "file": "id2.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "ALARM",
+        "file": "alarm.bmp"
+      }
+      ]
+      }

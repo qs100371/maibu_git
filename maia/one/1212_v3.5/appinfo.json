@@ -1,0 +1,86 @@
+{
+  "uuid": "8a532c1740edcc39ca6f439338ac1e43",
+  "name": "One",
+  "icon": "",
+  "version": "3.5.0",
+  "watchface": "true",
+  "device_type": "120",
+  "resources": [
+  {
+        "type": "bmp",
+        "name": "RES_WEATHER_CLOUDY",
+        "file": "icon_cloudy.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_FOG",
+        "file": "icon_fog.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_OVERCAST",
+        "file": "icon_overcast.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_RAIN",
+        "file": "icon_rain.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_SNOW",
+        "file": "icon_snow.bmp"
+      },
+	  	    {
+        "type": "bmp",
+        "name": "RES_WEATHER_SUNNY",
+        "file": "icon_sunny.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_WEATHER_NODATA",
+        "file": "refreshing.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "RES_WATCHFACE_OFFICIAL_BG",
+        "file": "official_bg.bmp"
+      },
+	  
+	  {
+        "type": "bmp",
+        "name": "STAGE",
+        "file": "stage.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "AQI1",
+        "file": "a1.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "AQI2",
+        "file": "a2.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "AQI3",
+        "file": "a3.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "AQI4",
+        "file": "a4.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "AQI5",
+        "file": "a5.bmp"
+      },
+	  {
+        "type": "bmp",
+        "name": "AQI6",
+        "file": "a6.bmp"
+      }
+      ]
+      }
